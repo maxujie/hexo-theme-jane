@@ -1,5 +1,17 @@
 <nav id="mobile-nav">
-  <% for (var i in theme.menu){ %>
-    <a href="<%- url_for(theme.menu[i]) %>" class="mobile-nav-link"><%= i %></a>
+  <% if (theme.menu.Home){ %>
+    <a href="<%= theme.menu.Home %>"  class="mobile-nav-link"> &#xe600 </a>
+  <% } %>
+  <% if (theme.menu.Archives){ %>
+    <a href="<%= theme.menu.Archives %>"  class="mobile-nav-link"> &#xe603 </a>
+  <% } %>
+  <% if (theme.menu.Tag){ %>
+    <a href="<%= theme.menu.Tag %>"  class="mobile-nav-link"> &#xe601 </a>
+  <% } %>
+  <% if (theme.menu.Profile){ %>
+    <a href="<%= theme.menu.Profile %>"  class="mobile-nav-link"> &#xe971 </a>
+  <% } %>
+  <% if (theme.menu.Github){ %>
+    <a href="<%= theme.menu.Github %>"  class="mobile-nav-link"> &#xe604 </a>
   <% } %>
 </nav>
