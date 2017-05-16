@@ -23,7 +23,7 @@
       <% } %>
 
       <% if (page.path === "tags/index.html"){ %>
-        <%- list_tags() %>
+        <%- list_tags({'orderby':'count'}) %>
       <% } %>
         
     </div>
