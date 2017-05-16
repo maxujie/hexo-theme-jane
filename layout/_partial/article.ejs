@@ -22,6 +22,8 @@
         <%- post.content %>
       <% } %>
 
+      <%- partial('post/tag') %>
+
       <% if (page.path === "tags/index.html"){ %>
         <%- list_tags({'orderby':'count'}) %>
       <% } %>

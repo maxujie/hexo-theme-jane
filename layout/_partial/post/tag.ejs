@@ -1,8 +1,9 @@
 <% if (post.tags && post.tags.length){ %>
+  <span style="font-family:iconfont"> &#xe601 </span>
   <%- list_tags(post.tags, {
     show_count: false,
     class: 'article-tag',
     style: 'none',
-    separator: ' '
+    separator: ', '
   }) %>
 <% } %>
