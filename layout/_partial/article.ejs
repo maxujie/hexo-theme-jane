@@ -10,28 +10,34 @@
       <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
       <%- partial('post/category') %>
     </div>
-    <div class="article-entry" itemprop="articleBody">
-      <% if (post.excerpt && index){ %>
-        <%- post.excerpt %>
-        <% if (theme.excerpt_link){ %>
-          <p class="article-more-link">
-            <a href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
-          </p>
+
+    <% if (!index){ %>
+      <div class="article-entry" itemprop="articleBody">
+    <% } else { %>
+      <div class="article-entry-index" itemprop="articleBody">
+    <% } %>
+        <% if (post.excerpt && index){ %>
+          <%- post.excerpt %>
+          <% if (theme.excerpt_link){ %>
+            <p class="article-more-link">
+              <a href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
+            </p>
+          <% } %>
+        <% } else { %>
+          <%- post.content %>
         <% } %>
-      <% } else { %>
-        <%- post.content %>
-      <% } %>
 
-      <%- partial('post/tag') %>
+        <%- partial('post/tag') %>
 
-      <% if (page.path === "tags/index.html"){ %>
-        <%- list_tags({'orderby':'count'}) %>
-      <% } %>
+        <% if (page.path === "tags/index.html"){ %>
+          <%- list_tags({'orderby':'count'}) %>
+        <% } %>
 
-      <% if (page.path === "profile/index.html"){ %>
-      <% } %>
-        
-    </div>
+        <% if (page.path === "profile/index.html"){ %>
+        <% } %>
+
+      </div>
+
   </div>
   <% if (!index){ %>
     <%- partial('post/nav') %>
