@@ -1,7 +1,7 @@
 <aside id="sidebar">
   <nav class="menus">
   	<ul>
-  		<li><a href="/"><i class="icon icon-home" title="Home"></i></a></li>
+  		<li><a href="/"><i class="icon icon-home" title="<%= config.title %>"></i></a></li>
   		<% if (theme.menu.Archives){ %>
 			<li><a href="<%= theme.menu.Archives %>" title="Archives"><i class="icon icon-fenlei"></i></a></li>
   		<% } %>
@@ -10,6 +10,9 @@
   		<% } %>
   		<% if (theme.menu.Profile){ %>
   			<li><a href="<%= theme.menu.Profile %>" title="Profile"><i class="icon icon-user"></i></a></li>
+  		<% } %>
+  		<% if (theme.menu.Project){ %>
+  			<li><a href="<%= theme.menu.Project %>" title="Projects"><i class="icon icon-project"></i></a></li>
   		<% } %>
   		<% if (theme.menu.Github){ %>
   			<li><a href="<%= theme.menu.Github %>" target="_blank" title="GitHub"><i class="icon icon-github"></i></a></li>

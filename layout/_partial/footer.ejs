@@ -2,8 +2,22 @@
   <% if (theme.sidebar === 'bottom'){ %>
     <%- partial('_partial/sidebar') %>
   <% } %>
-	<div id="footer-info" class="inner">
-	  &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %> 
-	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-	</div>
+  <div id="footer-info" class="inner">
+
+
+    <span>
+    &copy; <%= date(new Date(), 'YYYY') %> 
+    <a href="/profile">
+    <%= config.author || config.title %>
+    </a>
+
+    - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </span>
+
+    <span style="padding: 20px">
+    <a href="/profile/#license/"> 
+      <img src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" alt="BY-NC-SA">
+    </a>
+    </span>
+  </div>
 </footer>

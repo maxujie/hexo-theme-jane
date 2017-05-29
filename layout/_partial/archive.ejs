@@ -11,23 +11,25 @@
     </nav>
   <% } %>
 <% } else { %>
-  <% var last; %>
-  <% page.posts.each(function(post, i){ %>
+  <% var last_year, last_month; %>
+  <% site.posts.reverse().each(function(post, i){ %>
+    <% var month_str = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] %>
     <% var year = post.date.year(); %>
-    <% if (last != year){ %>
-      <% if (last != null){ %>
+    <% var month = post.date.month(); %>
+    <% if (last_year != year || last_month != month){ %>
+      <% if (last_year != null){ %>
         </div></section>
       <% } %>
-      <% last = year; %>
+      <% last_year = year; last_month = month %>
       <section class="archives-wrap">
         <div class="archive-year-wrap">
-          <a href="<%- url_for('archives/' + year) %>" class="archive-year"><%= year %></a>
+          <a href="<%- url_for('archives/' + year) %>" class="archive-year"><%= month_str[month] %>, <%= year %>  </a>
         </div>
         <div class="archives">
     <% } %>
     <%- partial('archive-post', {post: post, even: i % 2 == 0}) %>
   <% }) %>
-  <% if (page.posts.length){ %>
+  <% if (site.posts.length){ %>
     </div></section>
   <% } %>
 <% } %>
