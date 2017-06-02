@@ -12,7 +12,8 @@
   <% } %>
 <% } else { %>
   <% var last_year, last_month; %>
-  <% site.posts.reverse().each(function(post, i){ %>
+  <% var posts = site.posts.sort('date', -1) %>
+  <% posts.each(function(post, i){ %>
     <% var month_str = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] %>
     <% var year = post.date.year(); %>
     <% var month = post.date.month(); %>
